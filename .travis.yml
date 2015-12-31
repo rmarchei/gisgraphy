@@ -19,7 +19,7 @@ before_install:
   - docker build -t rmarchei/gisgraphy .
   - docker run -d -e POSTGRES_PASSWORD=$PGPASSWORD --name gisgraphy-db rmarchei/gisgraphy-db && sleep 10
   - docker run -d -p 127.0.0.1:8080:8080 --link gisgraphy-db:postgres --name gisgraphy rmarchei/gisgraphy
-  - timeout 20 docker logs -f gisgraphy || true
+  - timeout 30 docker logs -f gisgraphy || true
   - docker ps -a
   - docker top gisgraphy
   - docker exec -it gisgraphy id
