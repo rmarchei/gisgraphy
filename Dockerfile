@@ -26,7 +26,6 @@ RUN groupadd -r $GISGRAPHY_USER -o -g $GISGRAPHY_UID \
   && useradd -r -u $GISGRAPHY_UID -o -g $GISGRAPHY_USER -m -d $GISGRAPHY_HOME $GISGRAPHY_USER
 
 # Download and unpack the Gisgraphy distribution
-
 RUN cd /tmp \
   && curl -s -O http://download.gisgraphy.com/releases/gisgraphy-$GISGRAPHY_VERSION.zip \
   && echo "$GISGRAPHY_MD5  gisgraphy-$GISGRAPHY_VERSION.zip" > gisgraphy-$GISGRAPHY_VERSION.zip.md5 \
