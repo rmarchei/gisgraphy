@@ -2,7 +2,8 @@
 #
 # docker run -d \
 #      --restart on-failure \
-#      -p 8983:8983 \
+#      -p 8080:8080 \
+#      --link gisgraphy-db:postgres \
 #      --name gisgraphy \
 #      rmarchei/gisgraphy
 #
